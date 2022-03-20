@@ -1,3 +1,5 @@
+import './ExpenseItem.css';
+
 function ExpenseItem() {
     return (
         // root element has to be 1 element, nesting all other elements
