@@ -1,4 +1,5 @@
- 
+import './ExpenseDate.css';
+
 function ExpenseDate(props) {
 
     // define specific date elements as constants
