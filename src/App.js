@@ -27,22 +27,22 @@ function App() {
   ];
 
   // Standard Code
-  
-  return React.createElement(
-    'div', {},
-    React.createElement('h2', {}, 'Let\'s get started!'),
-    React.createElement(Expenses, { item: expenses })
-  );
+
+  // return React.createElement(
+  //   'div', {},
+  //   React.createElement('h2', {}, 'Let\'s get started!'),
+  //   React.createElement(Expenses, { item: expenses })
+  // );
 
 
   // JSX Code
 
-  // return (
-  //   <div>
-  //     <h2>Let's get started!</h2>
-  //     <Expenses item={expenses} />
-  //   </div>
-  // );
+  return (
+    <div>
+      <h2>Let's get started!</h2>
+      <Expenses item={expenses} />
+    </div>
+  );
 }
 
 export default App;
