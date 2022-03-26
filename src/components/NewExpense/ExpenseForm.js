@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 // build a form for user inputs
 
 const ExpenseForm = () => {
+    // individual state slice method
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enterdAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
