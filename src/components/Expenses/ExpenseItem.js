@@ -5,6 +5,11 @@ import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
 
+    // the click handler evaluated the click only once the DOM has loaded.
+    const clickHandler = () => {
+        console.log('Clicked!!');
+    };
+
     return (
         // root element has to be 1 element, nesting all other elements
         // use an import element tag for ExpenseDate then inherit data 
@@ -15,7 +20,7 @@ const ExpenseItem = (props) => {
                 <h2>{props.title}</h2>
                 <div className='expense-item__price'>€ {props.amount}</div>
             </div>
-            <button>Change Title</button>
+            <button onClick={clickHandler}>Change Title</button>
         </Card>
     );
 }
