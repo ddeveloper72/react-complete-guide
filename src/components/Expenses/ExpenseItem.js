@@ -5,10 +5,11 @@ import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
 
-    // add react hook
-    useState();
+    // add react hook, with an array of current value and function for changed value
+    const [title, setTitle] = useState(props.title);
+    console.log(title);
 
-    let title = props.title;
+    // let title = props.title;
     // the click handler evaluated the click only once the DOM has loaded.
     const clickHandler = () => {
         title = 'Clicked!!'
