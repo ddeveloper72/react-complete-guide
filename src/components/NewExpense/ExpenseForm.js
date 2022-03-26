@@ -10,8 +10,8 @@ const ExpenseForm = () => {
     
     const TitleChangeHandler = (event) => {
 
-        // use the vanilla JS event object to get the event, then map the event to get the value from the console
-        console.log(event.target.value);
+        // save the new title
+        setEnteredTitle(event.target.value);
     };
     
     return (
