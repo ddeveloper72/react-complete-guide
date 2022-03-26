@@ -1,7 +1,7 @@
 import React from 'react';
 import './ExpenseDate.css';
 
-function ExpenseDate(props) {
+const ExpenseDate = (props) => {
 
     // define specific date elements as constants
     const month = props.date.toLocaleString('ie-EU', { month: 'long' });
