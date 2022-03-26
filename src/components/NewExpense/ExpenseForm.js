@@ -7,16 +7,22 @@ import userEvent from '@testing-library/user-event';
 const ExpenseForm = () => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enterdAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
     
+    // save the new title
     const TitleChangeHandler = (event) => {
-        // save the new title
         setEnteredTitle(event.target.value);
     };
 
+    // save the new Amount
     const AmountChangeHandler = (event) => {
-        // save the new Amount
         setEnteredAmount(event.target.value);
     };
+
+    // save the new Date
+    const DateChangeHandler = (event) => {
+        setEnteredDate(event.target.value);
+    }
     
     return (
         <form>
@@ -31,7 +37,7 @@ const ExpenseForm = () => {
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
-                    <input type='date' min='2019-01-01' max='2022-12-31' />
+                    <input type='date' min='2019-01-01' max='2022-12-31' onChange={DateChangeHandler}/>
                 </div>
             </div>
             <div className='new-expense__actions'>
