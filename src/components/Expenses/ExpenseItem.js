@@ -3,7 +3,7 @@ import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
 
     return (
         // root element has to be 1 element, nesting all other elements
