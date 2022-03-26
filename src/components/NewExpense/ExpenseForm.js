@@ -1,17 +1,21 @@
 import React, {useState} from 'react';
 import './ExpenseForm.css';
-import { useState } from 'react';
 import userEvent from '@testing-library/user-event';
 
 // build a form for user inputs
 
 const ExpenseForm = () => {
     const [enteredTitle, setEnteredTitle] = useState('');
+    const [enterdAmount, setEnteredAmount] = useState('');
     
     const TitleChangeHandler = (event) => {
-
         // save the new title
         setEnteredTitle(event.target.value);
+    };
+
+    const AmountChangeHandler = (event) => {
+        // save the new Amount
+        setEnteredAmount(event.target.value);
     };
     
     return (
@@ -23,7 +27,7 @@ const ExpenseForm = () => {
                 </div>
                 <div className='new-expense__control'>
                     <label>Amount</label>
-                    <input type='number' min='0.01' step='0.01' />
+                    <input type='number' min='0.01' step='0.01' onChange={AmountChangeHandler}/>
                 </div>
                 <div className='new-expense__control'>
                     <label>Date</label>
