@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
 const ExpenseItem = (props) => {
+
+    // add react hook
+    useState();
 
     let title = props.title;
     // the click handler evaluated the click only once the DOM has loaded.
