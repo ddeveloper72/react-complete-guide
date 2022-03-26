@@ -12,7 +12,9 @@ const ExpenseItem = (props) => {
     // let title = props.title;
     // the click handler evaluated the click only once the DOM has loaded.
     const clickHandler = () => {
-        title = 'Clicked!!'
+        // call SetTitle to reevaluate ExpenseItem, using the newly defined value 
+        // for the initial state value
+        setTitle('Updated');
         console.log(title);
     };
 
