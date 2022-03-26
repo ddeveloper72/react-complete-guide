@@ -6,23 +6,39 @@ import userEvent from '@testing-library/user-event';
 
 const ExpenseForm = () => {
     // individual state slice method
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enterdAmount, setEnteredAmount] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
-    
+    // const [enteredTitle, setEnteredTitle] = useState('');
+    // const [enterdAmount, setEnteredAmount] = useState('');
+    // const [enteredDate, setEnteredDate] = useState('');
+
+    // combined state method
+    const [userInput, setUserInput] = useState({
+        enteredTitle: '',
+        enteredAmount: '',
+        enteredDate: '',
+    });
+     
     // save the new title
     const TitleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredTitle: event.target.value,
+        });
     };
 
     // save the new Amount
     const AmountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredAmount: event.target.value,
+        });
     };
 
     // save the new Date
     const DateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
+        setUserInput({
+            ...userInput,
+            enteredDate: event.target.value,
+        });
     }
     
     return (
