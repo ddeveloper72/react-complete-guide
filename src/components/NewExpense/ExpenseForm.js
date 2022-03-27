@@ -36,7 +36,7 @@ const ExpenseForm = (props) => {
         };
 
         // call props function from NewExpense and execute it here.
-        props.onSaveNewExpenseData();
+        props.onSaveNewExpenseData(expenseData);
 
         // clear the inputs on the form using 2-way binding
         setEnteredTitle('');
