@@ -27,6 +27,12 @@ const App = () => {
     },
   ];
 
+  // function for collecting expense data from  ExpenseForm
+  const addExpensehandler = expense => {
+    console.log('In App.js');
+    console.log(expenses);
+  }
+
   // Standard Code
 
   // return React.createElement(
