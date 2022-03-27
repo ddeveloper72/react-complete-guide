@@ -30,7 +30,7 @@ const App = () => {
   // function for collecting expense data from  ExpenseForm
   const addExpenseHandler = expense => {
     console.log('In App.js');
-    console.log(expenses);
+    console.log(expense);
   }
 
   // Standard Code
