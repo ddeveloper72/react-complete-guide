@@ -28,7 +28,7 @@ const App = () => {
   ];
 
   // function for collecting expense data from  ExpenseForm
-  const addExpensehandler = expense => {
+  const addExpenseHandler = expense => {
     console.log('In App.js');
     console.log(expenses);
   }
@@ -44,9 +44,10 @@ const App = () => {
 
   // JSX Code
 
+  // add function pointer for addExpenseHandler
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses item={expenses} />
     </div>
   );
