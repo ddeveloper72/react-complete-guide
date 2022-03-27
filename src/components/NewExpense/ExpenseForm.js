@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
-import userEvent from '@testing-library/user-event';
 
 // build a form for user inputs
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
     // individual state slice method
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
@@ -33,9 +32,11 @@ const ExpenseForm = () => {
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: new Date (enteredDate)
+            date: new Date(enteredDate)
         };
-        console.log(expenseData);
+
+        // call props function from NewExpense and execute it here.
+        props.onSaveNewExpenseData();
 
         // clear the inputs on the form using 2-way binding
         setEnteredTitle('');
