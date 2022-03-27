@@ -3,10 +3,20 @@ import ExpenseForm from './ExpenseForm';
 import './NewExpense.css';
 
 const NewExpense = () => {
+    const SaveNewExpenseData = (enteredExpenseData) => {
+        //  use the spread operation to add the new data to the existing array
+        //  added id to the data using math.random()
+        const expenseData = {
+            ...enteredExpenseData,
+            id: Math.random().toString()
+        };
+        console.log(expenseData);
+    };
 
     return (
+        // add a prop, onSaveNewExpenseData to trigger a function to save form data
         <div className='new-expense'>
-            <ExpenseForm />
+            <ExpenseForm onSaveNewExpenseData={SaveNewExpenseData}/>
         </div>
     );
 };
