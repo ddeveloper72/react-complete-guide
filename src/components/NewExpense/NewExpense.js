@@ -14,7 +14,7 @@ const NewExpense = () => {
     };
 
     return (
-        // add a prop, onSaveNewExpenseData to trigger a function to save form data
+        // add a prop, onSaveNewExpenseData to pull in function as a value
         <div className='new-expense'>
             <ExpenseForm onSaveNewExpenseData={SaveNewExpenseData}/>
         </div>
