@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 const ExpenseForm = () => {
     // individual state slice method
     const [enteredTitle, setEnteredTitle] = useState('');
-    const [enterdAmount, setEnteredAmount] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
 
     // save the new title
@@ -25,8 +25,21 @@ const ExpenseForm = () => {
         setEnteredDate(event.target.value);
     }
 
+    // form submit handler
+    const submitHandler = (event) => {
+        event.preventDefault();  // stop page reloading
+
+        // create an expense data object
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date (enteredDate)
+        };
+        console.log(expenseData);
+    };
+
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
