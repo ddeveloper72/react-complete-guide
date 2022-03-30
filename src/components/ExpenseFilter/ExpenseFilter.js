@@ -5,8 +5,8 @@ import './ExpenseFilter.css';
 const ExpenseFilter = (props) => {
 
     const changeHandler = (e) => {
-        // use onChange to detect the value selected
-        console.log(e.target.value);
+        // use onChange to detect the value selected & forward to Expenses.js
+        props.onChangeFilter(e.target.value)
     };
 
 
