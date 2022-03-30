@@ -12,9 +12,10 @@ const Expenses = (props) => {
 
   // receive value from ExpensesFilter
   const filterChangeHandler = selectedYear => {
-    console.log('Expenses.js');
-    console.log(selectedYear);
-  }
+
+    // set filtered year to the selectedYear which was received a a parameter
+    setFilteredYear(selectedYear);
+  };
 
   // console.log(props);
   return (
