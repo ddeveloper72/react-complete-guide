@@ -21,24 +21,28 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-
   // use map to iterate through the array of filteredExpenses items
+  let expensesContent = <p>No expenses found.</p>;
+
+  // use conditional logic to iterate through the array of filteredExpenses items
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
+
+  // refer to a constant to get logic
   return (
     <div>
       <Card className="expenses">
         <ExpenseFilter onChangeFilter={filterChangeHandler} selectedYear={filteredYear} />
-        {/* use truthiness to determine a condition of a value */}
-        {filteredExpenses.length === 0 && <p>No expenses found.</p>}
-        {filteredExpenses.length >0 &&
-          filteredExpenses.map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))
-        }
+        {expensesContent}
       </Card>
     </div>
   )
