@@ -23,13 +23,13 @@ const Expenses = (props) => {
 
   console.log(filteredExpenses);
 
-  // use map to iterate through the array of expense items
+  // use map to iterate through the array of filteredExpenses items
   return (
     <div>
       <Card className="expenses">
         <ExpenseFilter onChangeFilter={filterChangeHandler} selectedYear={filteredYear} />
         {
-          props.item.map((expense) => (
+          filteredExpenses.map((expense) => (
             <ExpenseItem
               key={expense.id}
               title={expense.title}
