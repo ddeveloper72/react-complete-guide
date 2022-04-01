@@ -21,7 +21,6 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
-  console.log(filteredExpenses);
 
   // use map to iterate through the array of filteredExpenses items
   return (
