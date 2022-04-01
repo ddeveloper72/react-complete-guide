@@ -16,6 +16,13 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
+  // add filter for filteredYear
+  const filteredExpenses = props.item.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
+  console.log(filteredExpenses);
+
   // use map to iterate through the array of expense items
   return (
     <div>
