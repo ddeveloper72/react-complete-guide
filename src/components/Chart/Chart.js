@@ -9,9 +9,9 @@ const Chart = (props) => {
     // render the chart in the DOM
     return <div className='chart'>
         {props.data
-        // iterate using map through the [] of objects to return the data wanted
+            // iterate using map through the [] of objects to return the data wanted
             .map(data => (
-                <ChartBar value={data.value} />
+                <ChartBar key={data.id} value={data.value} label={data.label} maxValue={null} />
             ))
         }
     </div>
