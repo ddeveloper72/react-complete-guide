@@ -8,7 +8,7 @@ const ChartBar = (props) => {
     let barFill = '0%';
 
     // calculate the actual css value from the props data
-    if (props > 0) {
+    if (props.maxValue > 0) {
         barFill = Math.round((props.value / props.maxValue) * 100) + '%';
     }
 
