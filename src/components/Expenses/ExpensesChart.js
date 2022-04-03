@@ -24,8 +24,6 @@ const ExpensesChart = (props) => {
         const expenseMonth = expense.date.getMonth(); // starting at index 0 for January
         chartData[expenseMonth].value += expense.amount;  // where expenseMonth is an array
     };
-    console.log(chartData);
-
 
     return <Chart dataItems={chartData} />
 };
