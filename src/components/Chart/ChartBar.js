@@ -14,7 +14,8 @@ const ChartBar = (props) => {
 
     return <div className='chat-bar'>
         <div className='chart-bar__inner'>
-            <div className='chart-bar__fill'></div>
+            {/* add JS object in double {}.  Use camelCase cor CSS class names with (-) characters. */}
+            <div className='chart-bar__fill' style={{height: barFill}}></div>
         </div>
         <div className='chart-bar__label'>{props.label}</div>
     </div>
