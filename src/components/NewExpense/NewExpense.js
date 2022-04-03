@@ -19,11 +19,17 @@ const NewExpense = (props) => {
         };
 
         props.onAddExpense(expenseData);
+        setAddNewExpense(false);
     };
 
     // call and addNewExpenseHandler method to change the setAddNewExpense state to true.
     const addNewExpenseHandler = () => {
         setAddNewExpense(true);
+    };
+
+    // Don't submit the expense form
+    const cancelSubmitHandler = () => {
+        setAddNewExpense(false);
     };
 
     if (!addingNewExpense) {
@@ -34,7 +40,7 @@ const NewExpense = (props) => {
     } else {
         // when setAddNewExpense is true, show the setAddNewExpense form
         SelectNewExpense =
-            <ExpenseForm onSaveNewExpenseData={SaveNewExpenseData} />;
+            <ExpenseForm onSaveNewExpenseData={SaveNewExpenseData} cancelSubmit={cancelSubmitHandler}/>;
 
     }
 
