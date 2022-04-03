@@ -7,7 +7,14 @@ import './Chart.css';
 const Chart = (props) => {
 
     // render the chart in the DOM
-    return <div className='chart'></div>
+    return <div className='chart'>
+        {props.data
+        // iterate using map through the [] of objects to return the data wanted
+            .map(data => (
+                <ChartBar value={data.value} />
+            ))
+        }
+    </div>
 };
 
 export default Chart;
