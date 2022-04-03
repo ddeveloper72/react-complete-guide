@@ -3,6 +3,15 @@ import React from 'react';
 import './ChartBar.css'
 
 const ChartBar = (props) => {
+
+    // define a name of a css variable
+    let barFill = '0%';
+
+    // calculate the actual css value from the props data
+    if (props > 0) {
+        barFill = Math.round((props.value / props.maxValue) * 100) + '%';
+    }
+
     return <div className='chat-bar'>
         <div className='chart-bar__inner'>
             <div className='chart-bar__fill'></div>
