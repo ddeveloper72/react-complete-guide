@@ -11,14 +11,14 @@ const Chart = (props) => {
         .map(data => data.value);
 
     // create a variable for calculating the maxValue
-    const totatlMaximum = Math.max();
+    const totalMaximum = Math.max(...dataValue);  // use spread operator to pull out the 12 monthly arguments
 
     // render the chart in the DOM
     return <div className='chart'>
         {props.data
-            // iterate using map through the [] of objects to return the data wanted
+            // iterate using map through the [] of objects to return the data wanted, pulling in totalMaximum from calculation
             .map(data => (
-                <ChartBar key={data.id} value={data.value} label={data.label} maxValue={null} />
+                <ChartBar key={data.id} value={data.value} label={data.label} maxValue={totalMaximum} />
             ))
         }
     </div>
