@@ -7,7 +7,7 @@ import './Chart.css';
 const Chart = (props) => {
 
     // create a variable for returning and [] of data values
-    const dataValue = props.data
+    const dataValue = props.dataItems
         .map(data => data.value);
 
     // create a variable for calculating the maxValue
@@ -15,10 +15,10 @@ const Chart = (props) => {
 
     // render the chart in the DOM
     return <div className='chart'>
-        {props.data
+        {props.dataItems
             // iterate using map through the [] of objects to return the data wanted, pulling in totalMaximum from calculation
             .map(data => (
-                <ChartBar key={data.id} value={data.value} label={data.label} maxValue={totalMaximum} />
+                <ChartBar key={data.label} value={data.value} label={data.label} maxValue={totalMaximum} />
             ))
         }
     </div>
